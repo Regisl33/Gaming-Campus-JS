@@ -10,6 +10,10 @@
   font-family: Montserrat, sans-serif;
   list-style: none;
 }
+li{
+  z-index: 2;
+  position: relative;
+}
 button{
   background: none;
   outline: none;
@@ -19,6 +23,8 @@ button{
   font-weight: 700;
   transition: 0.4s ease;
   cursor: pointer;
+  z-index: 2;
+  position: relative;
 }
 button:hover{
   color: black;
@@ -26,10 +32,13 @@ button:hover{
 }
 a{
   text-decoration: none;
+  z-index: 2;
+  position: relative;
 }
 body{
   margin: 0 auto;
   text-align: center;
+  cursor: none;
 }
 .sidebar{
   padding-top: 150px;
@@ -58,6 +67,7 @@ body{
 }
 .hamburger-menu{
   position: absolute;
+  z-index: 2;
   top: 5px;
   left: 325px;
   cursor: pointer;
@@ -88,13 +98,16 @@ body{
 }
 .content{
   transition: 0.3s ease;
-}
-.content.active{
-  opacity: 0.3;
+  margin-top: 58px;
 }
 nav{
-  max-width: 1100px;
-  margin: 0 auto;
+  position: fixed;
+  height: 58px;
+  background: white;
+  top: 0;
+  padding: 0 15%;
+  width: 100%;
+  z-index: 3;
 }
 nav ul{
   display: flex;
@@ -109,7 +122,8 @@ nav li{
   cursor: pointer;
   position: relative;
   transition: 0.3s ease;
-  padding: 20px 0;
+  padding: 20px 0px;
+  z-index: 4;
 }
 nav li:first-child{
   color:rgb(95, 4, 170);
@@ -148,6 +162,7 @@ nav li:last-child:before{
   cursor: pointer;
   opacity: 0;
   position: absolute;
+  z-index: 2;
   top: 27px;
   right: 15px;
   transform: translate(-50%, -50%);
@@ -391,10 +406,8 @@ footer ul{
   width: 450px;
   height: 250px;
   opacity: 0.8;
+  transition: 0.5s ease-in-out;
   z-index: 4;
-}
-.popup.active{
-  right: 0;
 }
 .popup span{
   position: absolute;
@@ -404,6 +417,8 @@ footer ul{
 }
 .popup i{
   font-size: 1.5rem;
+  position: relative;
+  z-index: 5;
 }
 .popup h4{
   margin-bottom: 40px;
@@ -430,6 +445,15 @@ footer ul{
   border-radius: 10px;
   font-size: 1.1rem;
   letter-spacing: 2px;
+}
+.mouse{
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  background: rgb(255,126,47);
+  background: radial-gradient(circle, rgba(255,126,47,0.25) 0%, rgba(192,22,247,0.25) 35%, rgba(1,1,81,0.25) 100%);
+  transform: translate(-50%, -50%);
 }
 
 /* ************************Medias Queries************************ */
