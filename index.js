@@ -31,12 +31,10 @@ closeBtn.addEventListener("click", ()=>{
 submit.addEventListener("click", (e)=>{
   e.preventDefault();
   email = e.target.previousElementSibling.value;
+  popup.style.right = "-450px";
 });
 //Sidebar
 btnMenu.addEventListener("click", ()=>{
-  content.classList.toggle("active");
-  sidebar.classList.toggle("active");
-  btnMenu.classList.toggle("active");
   spans.forEach((span) =>{
     span.classList.toggle("active");
   });
