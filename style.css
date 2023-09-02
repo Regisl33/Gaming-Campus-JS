@@ -39,6 +39,7 @@ body{
   margin: 0 auto;
   text-align: center;
   cursor: none;
+  overflow-x: hidden;
 }
 .sidebar{
   padding-top: 150px;
@@ -66,14 +67,14 @@ body{
   transform: scale(110%);
 }
 .hamburger-menu{
-  position: absolute;
-  z-index: 2;
   top: 5px;
   left: 325px;
-  cursor: pointer;
+  position: absolute;
   height: 50px;
   width: 50px;
   opacity: 0;
+  z-index: 4;
+  cursor: pointer;
 }
 .hamburger-menu.active{
   transform: rotate(180deg);
@@ -88,13 +89,13 @@ body{
   transition: 0.3s ease;
 }
 .active.hamburger-menu span:nth-child(1){
-  transform: rotate(45deg);
+  transform: rotate(45deg)translateY(20px);
 }
 .active.hamburger-menu span:nth-child(2){
   opacity: 0;
 }
 .active.hamburger-menu span:nth-child(3){
-  transform: rotate(-45deg);
+  transform: rotate(-45deg) translateY(-20px);
 }
 .content{
   transition: 0.3s ease;
@@ -162,7 +163,7 @@ nav li:last-child:before{
   cursor: pointer;
   opacity: 0;
   position: absolute;
-  z-index: 2;
+  z-index: 4;
   top: 27px;
   right: 15px;
   transform: translate(-50%, -50%);
@@ -468,7 +469,6 @@ footer ul{
   #language{
     opacity: 1;
   }
-
 }
 @media  screen and (max-width: 895px){
   .main-header img{
